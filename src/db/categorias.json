@@ -1,0 +1,17 @@
+[
+  {
+    "idCategoria": 1,
+    "nombreCategoria": "Equipos económicos",
+    "imagenCategoriaUrl": ""
+  },
+  {
+    "idCategoria": 2,
+    "nombreCategoria": "Equipos semiprofesionales",
+    "imagenCategoriaUrl": ""
+  },
+  {
+    "idCategoria": 3,
+    "nombreCategoria": "Equipos profesionales",
+    "imagenCategoriaUrl": ""
+  }
+]

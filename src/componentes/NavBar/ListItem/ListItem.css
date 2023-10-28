@@ -1,0 +1,19 @@
+li {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+li:hover {
+  color: rgb(255, 238, 0);
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  justify-content: space-between;
+  margin: 10px;
+}

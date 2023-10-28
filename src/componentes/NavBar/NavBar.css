@@ -1,0 +1,28 @@
+header {
+  background-color: black;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoNavBar {
+  height: 80%;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+}
+
+ul {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  font-size: 22px;
+}

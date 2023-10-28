@@ -1,0 +1,21 @@
+svg {
+  fill: white;
+  height: 40px;
+  width: 40px;
+  margin-left: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+svg:hover {
+  fill: rgb(255, 238, 0);
+}
+
+strong {
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+strong:hover {
+  color: yellow;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.cardProducto img {
+  border-radius: 10px;
+  border: 1px gray solid;
+  width: 300px;
+  height: 300px;
+}
+.cardProducto {
+  margin: 30px;
+  text-align: center;
+}
+
+.cardProducto button {
+  margin-top: 20px;
+  text-align: center;
+}
