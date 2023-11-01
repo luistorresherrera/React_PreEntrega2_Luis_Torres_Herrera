@@ -25,13 +25,13 @@ const NavBar = () => {
       <div className="div-header">
         <nav>
           <ul>
-            <NavLink to="/categoria">
+            <NavLink to="/categoria/1">
               <ListItem ItemName="Equipo económicos" />
             </NavLink>
-            <NavLink to="/categoria">
+            <NavLink to="/categoria/2">
               <ListItem ItemName="Equipo semiprofesionales" />
             </NavLink>
-            <NavLink to="/categoria">
+            <NavLink to="/categoria/3">
               <ListItem ItemName="Equipos profesionales" />
             </NavLink>
           </ul>

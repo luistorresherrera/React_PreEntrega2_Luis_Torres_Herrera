@@ -2,29 +2,7 @@ import React from "react";
 import NavBar from "./componentes/NavBar/NavBar";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-// function App() {
-//   return (
-//     <>
-//       <BrowserRouter>
-//         <NavBar />
-//         <Routes>
-//           <Route
-//             path="/producto/:idCategoria"
-//             element={
-//               <ItemListContainer
-//                 greeting="Encuentra el mejor equipo para tu empresa"
-//                 urlProductos="./src/db/productos.json"
-//               />
-//             }
-//           />
-//         </Routes>
-//       </BrowserRouter>
-//     </>
-//   );
-// }
-
-// export default App;
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -34,12 +12,27 @@ function App() {
 
         <Routes>
           <Route
-            path="/:idCategoria"
+            path="/categoria/:idCategoria"
             element={
               <ItemListContainer
                 greeting="Encuentra el mejor equipo para tu empresa"
-                urlProductos="./src/db/productos.json"
+                // urlProductos="./src/db/productos.json"
               />
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <ItemListContainer
+                greeting="Encuentra el mejor equipo para tu empresa"
+                // urlProductos="./src/db/productos.json"
+              />
+            }
+          />
+          <Route
+            path="/item/:idProducto"
+            element={
+              <ItemDetailContainer urlProductos="../src/db/productos.json" />
             }
           />
         </Routes>

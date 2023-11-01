@@ -1,7 +1,9 @@
 import React from "react";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
+  idProducto,
   imagenProductoURL,
   nombreProducto,
   precioProducto,
@@ -13,7 +15,9 @@ const ProductCard = ({
       <h3>{nombreProducto}</h3>
       <p>{marcaProducto}</p>
       <p>Precio: CLP {precioProducto} +IVA</p>
-      <button>Ver detalles</button>
+      <div className="linkButton">
+        <Link to={`/item/${idProducto}`}>Ver detalles</Link>
+      </div>
     </div>
   );
 };

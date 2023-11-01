@@ -9,10 +9,9 @@ const UseFetch = (url) => {
         .then((response) => response.json())
         .then((data) => setdatos(data))
         .catch((error) => console.log(error));
-    }, 2000);
+    }, 1000);
   }, []);
 
-  console.log(datos);
   return datos;
 };
 

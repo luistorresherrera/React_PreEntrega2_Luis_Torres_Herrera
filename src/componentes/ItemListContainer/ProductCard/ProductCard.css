@@ -9,16 +9,24 @@
   text-align: center;
 }
 
-.cardProducto button {
-  margin-top: 10px;
+.cardProducto a {
+  margin-top: 900px !important;
   text-align: center;
   padding: 10px;
   font-size: 14px;
   background-color: white;
   border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid black;
+  color: black !important;
+  font-weight: bold;
 }
 
-.cardProducto button:hover {
+.cardProducto a:hover {
   background-color: black;
-  color: white;
+  color: white !important;
+}
+
+.linkButton {
+  margin-top: 20px;
 }

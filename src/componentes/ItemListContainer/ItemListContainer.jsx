@@ -3,13 +3,15 @@ import UseFetch from "../CustomHooks/UseFetch";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
 import { getProductosPorCategoria } from "../CustomHooks/getProductos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ItemListContainer = ({ greeting, urlProductos }) => {
+  const [productos, setProductos] = useState([]);
   const { idCategoria } = useParams();
 
   // useEffect(() => {
-  const datosProductos = getProductosPorCategoria(urlProductos, idCategoria);
+  const productosX = getProductosPorCategoria(idCategoria);
+  //   setProductos(productosX);
   // }, [idCategoria]);
 
   return (
@@ -17,7 +19,7 @@ const ItemListContainer = ({ greeting, urlProductos }) => {
       <h2 className="titlepage" style={{ textAlign: "center", color: "black" }}>
         {greeting}
       </h2>
-      <ProductList producto={datosProductos} />
+      <ProductList producto={productosX} />
     </>
   );
 };
