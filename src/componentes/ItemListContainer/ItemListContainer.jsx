@@ -1,19 +1,22 @@
-// import { getProductos } from "../asyncmock";
 import ProductList from "./ProductList/ProductList";
 import UseFetch from "../CustomHooks/UseFetch";
+import "./ItemListContainer.css";
+import { useParams } from "react-router-dom";
+import { getProductosPorCategoria } from "../CustomHooks/getProductos";
+import { useEffect } from "react";
 
-const ItemListContainer = ({ greeting }) => {
-  // const [datosProductos, setdatosProductos] = useState([]);
+const ItemListContainer = ({ greeting, urlProductos }) => {
+  const { idCategoria } = useParams();
+
   // useEffect(() => {
-  //   getProductos()
-  //     .then((respuesta) => setdatosProductos(respuesta))
-  //     .catch((error) => console.log(error)),
-  //     [];
-  // });
-  const datosProductos = UseFetch();
+  const datosProductos = getProductosPorCategoria(urlProductos, idCategoria);
+  // }, [idCategoria]);
+
   return (
     <>
-      <h2 style={{ textAlign: "center", color: "black" }}>{greeting}</h2>
+      <h2 className="titlepage" style={{ textAlign: "center", color: "black" }}>
+        {greeting}
+      </h2>
       <ProductList producto={datosProductos} />
     </>
   );
