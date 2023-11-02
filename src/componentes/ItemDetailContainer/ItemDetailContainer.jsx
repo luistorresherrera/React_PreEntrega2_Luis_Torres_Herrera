@@ -1,31 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { getDetalleProducto } from "../CustomHooks/getProductos";
 import { useParams } from "react-router-dom";
+import "./ItemDetailContainer.css";
 
-const ItemDetailContainer = ({ urlProductos }) => {
+const ItemDetailContainer = () => {
   const { idProducto } = useParams();
 
   const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    getDetalleProducto(urlProductos, idProducto).then((respuesta) =>
-      setProducto(respuesta)
-    );
+    getDetalleProducto(idProducto).then((respuesta) => setProducto(respuesta));
   }, [idProducto]);
-  console.log(producto);
+
   return (
     <div>
-      {/* <img
-        src={detalleProducto.imagenProductoURL}
-        alt={detalleProducto.nombreProducto}
-      />
-      <h2 style={{ textAlign: "center", color: "black" }}>
-        {detalleProducto.nombreProducto}
-      </h2>
-      <p>Marca: {detalleProducto.marcaProducto}</p>
-      <p>Precio: CLP {detalleProducto.precioProducto} +IVA</p> */}
-      {idProducto}
-      {/* {detalleProducto.nombreProducto} */}
+      {producto && (
+        <>
+          <div className="PageProducto">
+            <div className="ImagenProducto">
+              <img
+                src={producto.imagenProductoURL}
+                alt={producto.nombreProducto}
+              />
+            </div>
+            <div className="DetalleProducto">
+              <h2>{producto.nombreProducto}</h2>
+              <p>
+                <strong>Marca:</strong> {producto.marcaProducto}
+              </p>
+              <p>
+                <strong>Precio:</strong> CLP {producto.precioProducto} +IVA
+              </p>
+              <p>
+                <strong>Detalle:</strong>
+              </p>
+              <p>{producto.descripcionProducto}</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

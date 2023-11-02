@@ -1,18 +1,16 @@
-import UseFetch from "./UseFetch";
+import { useFetch } from "./UseFetch";
 
-export const getProductosPorCategoria = (idCat) => {
-  const fetchProductos = UseFetch("./src/db/productos.json");
-
-  //   const productosCategoria = idCat
-  //     ? fetchProductos.filter((item) => item.categoriaProducto == idCat)
-  //     : fetchProductos;
+export const getProductosPorCategoria = async (idCat) => {
+  const fetchProductos = await useFetch(
+    window.location.origin + "/src/db/productos.json"
+  );
+  console.log(idCat);
+  console.log("fetchProducts", fetchProductos);
   let productosCategoria = [];
   if (idCat) {
     productosCategoria = fetchProductos.filter(
       (item) => item.categoriaProducto == idCat
     );
-    // const tituloCategoria = UseFetch("./src/db/categoria.json");
-    // console.log(tituloCategoria);
   } else {
     productosCategoria = fetchProductos;
   }
@@ -20,10 +18,13 @@ export const getProductosPorCategoria = (idCat) => {
   return productosCategoria;
 };
 
-export const getDetalleProducto = (url, idItem) => {
-  const fetchProductos = UseFetch(url);
-  const productoIndividual = fetchProductos.find(
-    (item) => item.idPrducto == idItem
+export const getDetalleProducto = async (idItem) => {
+  const fetchProductos = await useFetch(
+    window.location.origin + "/src/db/productos.json"
   );
+  const productoIndividual = fetchProductos.find(
+    (item) => item.idProducto == idItem
+  );
+  // console.log("productoIndividual", productoIndividual);
   return productoIndividual;
 };

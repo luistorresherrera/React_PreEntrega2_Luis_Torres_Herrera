@@ -29,12 +29,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/item/:idProducto"
-            element={
-              <ItemDetailContainer urlProductos="../src/db/productos.json" />
-            }
-          />
+          <Route path="/item/:idProducto" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
     </>

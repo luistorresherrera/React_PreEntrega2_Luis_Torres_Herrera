@@ -1,0 +1,38 @@
+.PageProducto {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
+  margin-top: 30px;
+}
+.ImagenProducto {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.ImagenProducto img {
+  width: 80%;
+}
+
+.ImagenProducto p {
+  margin-top: 10px;
+}
+
+.DetalleProducto {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 30px;
+  text-align: start;
+}
+
+.DetalleProducto strong {
+  color: black !important;
+  margin-left: 0px !important;
+}
+
+.Regresar {
+  text-align: center;
+  width: 100%;
+}

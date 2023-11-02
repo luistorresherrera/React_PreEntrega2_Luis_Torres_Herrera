@@ -2,11 +2,11 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./ProductList.css";
 
 const ProductList = ({ producto }) => {
+  // console.log(producto);
   return (
     <div className="productList">
-      {producto.map((item) => (
-        <ProductCard key={item.idProducto} {...item} />
-      ))}
+      {producto &&
+        producto.map((item) => <ProductCard key={item.idProducto} {...item} />)}
     </div>
   );
 };
