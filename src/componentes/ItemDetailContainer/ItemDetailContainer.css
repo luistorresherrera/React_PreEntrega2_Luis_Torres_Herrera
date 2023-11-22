@@ -36,3 +36,14 @@
   text-align: center;
   width: 100%;
 }
+
+.btnCantidad {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+.btnAgregar {
+  width: auto;
+  height: 25px;
+  margin: 10px;
+}

@@ -7,6 +7,14 @@ const ItemDetailContainer = () => {
   const { idProducto } = useParams();
 
   const [producto, setProducto] = useState(null);
+  const [cantidadItemDetail, setCantidadItemDetail] = useState(1);
+
+  const incrementarItemDetail = () => {
+    setCantidadItemDetail(cantidadItemDetail + 1);
+  };
+  const reducirItemDetail = () => {
+    cantidadItemDetail > 1 && setCantidadItemDetail(cantidadItemDetail - 1);
+  };
 
   useEffect(() => {
     getDetalleProducto(idProducto).then((respuesta) => setProducto(respuesta));
@@ -35,6 +43,19 @@ const ItemDetailContainer = () => {
                 <strong>Detalle:</strong>
               </p>
               <p>{producto.descripcionProducto}</p>
+              <br></br>
+              <h3>Cantidad de producto</h3>
+              <br></br>
+
+              <button className="btnCantidad" onClick={reducirItemDetail}>
+                -
+              </button>
+              <span>{cantidadItemDetail}</span>
+              <button className="btnCantidad" onClick={incrementarItemDetail}>
+                +
+              </button>
+
+              <button className="btnAgregar">Agregar al carrito</button>
             </div>
           </div>
         </>
