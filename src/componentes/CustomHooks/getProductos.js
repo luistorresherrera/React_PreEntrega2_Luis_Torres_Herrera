@@ -25,6 +25,6 @@ export const getDetalleProducto = async (idItem) => {
   const productoIndividual = fetchProductos.find(
     (item) => item.idProducto == idItem
   );
-  // console.log("productoIndividual", productoIndividual);
+
   return productoIndividual;
 };

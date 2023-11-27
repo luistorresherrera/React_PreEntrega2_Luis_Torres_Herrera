@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getDetalleProducto } from "../CustomHooks/getProductos";
 import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
+import { CarritoContext } from "../../context/carritoContext";
+import { useContext } from "react";
 
 const ItemDetailContainer = () => {
   const { idProducto } = useParams();
+
+  const { agregarAlCarrito } = useContext(CarritoContext);
 
   const [producto, setProducto] = useState(null);
   const [cantidadItemDetail, setCantidadItemDetail] = useState(1);
@@ -19,6 +23,12 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     getDetalleProducto(idProducto).then((respuesta) => setProducto(respuesta));
   }, [idProducto]);
+
+  const manjadorAgregarAlCarrito = () => {
+    console.log("producto visto");
+    console.log(producto);
+    agregarAlCarrito(producto, cantidadItemDetail);
+  };
 
   return (
     <div>
@@ -55,7 +65,9 @@ const ItemDetailContainer = () => {
                 +
               </button>
 
-              <button className="btnAgregar">Agregar al carrito</button>
+              <button className="btnAgregar" onClick={manjadorAgregarAlCarrito}>
+                Agregar al carrito
+              </button>
             </div>
           </div>
         </>

@@ -3,10 +3,14 @@ import ListItem from "./ListItem/ListItem";
 import "./NavBar.css";
 import CartWidget from "./CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../../context/carritoContext";
 
 const NavBar = () => {
   const logo =
     "https://www.dyma.cl/wp-content/uploads/2021/01/Logo-DYMA-BN_Logo-Color-mini.png";
+
+  const { carrito, total, cantidadTotal } = useContext(CarritoContext);
 
   return (
     <header>
@@ -35,7 +39,9 @@ const NavBar = () => {
               <ListItem ItemName="Equipos profesionales" />
             </NavLink>
           </ul>
-          <CartWidget NumberCart={3} />
+          <Link to="/cart">
+            <CartWidget NumberCart={cantidadTotal} />
+          </Link>
         </nav>
       </div>
     </header>
