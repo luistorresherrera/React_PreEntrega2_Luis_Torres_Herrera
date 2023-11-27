@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
 import { CarritoContext } from "../../context/carritoContext";
 import { useContext } from "react";
+import { db } from "../../servicios/config";
+import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const { idProducto } = useParams();
@@ -21,7 +23,16 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    getDetalleProducto(idProducto).then((respuesta) => setProducto(respuesta));
+    // getDetalleProducto(idProducto).then((respuesta) => setProducto(respuesta));
+
+    const nuevoDoc = doc(db, "products", idProducto);
+    getDoc(nuevoDoc)
+      .then((res) => {
+        const data = res.data();
+        const nuevoProducto = { idProducto: res.id, ...data };
+        setProducto(nuevoProducto);
+      })
+      .catch((error) => console.log(error));
   }, [idProducto]);
 
   const manjadorAgregarAlCarrito = () => {

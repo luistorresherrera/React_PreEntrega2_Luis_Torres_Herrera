@@ -40,14 +40,19 @@ export const CarritoProvider = ({ children }) => {
   };
 
   const eliminarProducto = (id) => {
-    const productoEliminado = carrito.find((prod) => prod.item.id === id);
-    const carritoActualizado = carrito.filter((prod) => prod.item.id !== id);
+    const productoEliminado = carrito.find(
+      (prod) => prod.item.idProducto === id
+    );
+    const carritoActualizado = carrito.filter(
+      (prod) => prod.item.idProducto !== id
+    );
 
     setCarrito(carritoActualizado);
     setCantidadTotal((prev) => prev - productoEliminado.cantidad);
     setTotal(
       (prev) =>
-        prev - productoEliminado.item.precio * productoEliminado.cantidad
+        prev -
+        productoEliminado.item.precioProducto * productoEliminado.cantidad
     );
   };
 

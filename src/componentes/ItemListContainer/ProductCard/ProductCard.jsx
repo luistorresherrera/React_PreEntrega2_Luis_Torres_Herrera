@@ -3,7 +3,7 @@ import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({
-  idProducto,
+  id,
   imagenProductoURL,
   nombreProducto,
   precioProducto,
@@ -16,7 +16,7 @@ const ProductCard = ({
       <p>{marcaProducto}</p>
       <p>Precio: CLP {precioProducto} +IVA</p>
       <div className="linkButton">
-        <Link to={`/item/${idProducto}`}>Ver detalles</Link>
+        <Link to={`/item/${id}`}>Ver detalles</Link>
       </div>
     </div>
   );

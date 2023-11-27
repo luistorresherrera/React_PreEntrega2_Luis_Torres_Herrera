@@ -6,7 +6,7 @@ const ProductList = ({ producto }) => {
   return (
     <div className="productList">
       {producto &&
-        producto.map((item) => <ProductCard key={item.idProducto} {...item} />)}
+        producto.map((item) => <ProductCard key={item.id} {...item} />)}
     </div>
   );
 };
