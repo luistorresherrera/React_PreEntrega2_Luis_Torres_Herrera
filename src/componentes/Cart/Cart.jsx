@@ -18,7 +18,7 @@ const Cart = () => {
   return (
     <div>
       {carrito.map((producto) => (
-        <CartItem key={producto.id} {...producto} />
+        <CartItem key={producto.item.idProducto} {...producto} />
       ))}
       <hr></hr>
       <h3>Total: CLP {total}</h3>
